@@ -20,6 +20,33 @@ export class Village {
 
 
     }
-  
+  addImprovement(improvement: Improvement) : void
+  {
+this.listOfImprovements.push(improvement)
+  }
+
+  removeImprovement(index: number) : void
+  {
+this.listOfImprovements.splice(index, 1)
+  }
+
+  upgradeImprovement(index: number) : void
+  {
+this.listOfImprovements[index].people++
+this.listOfImprovements[index].grain++
+this.listOfImprovements[index].sheep++
+this.listOfImprovements[index].lumber++
+this.listOfImprovements[index].water++
+  }
+
+  downgradeImprovement(index: number) : void
+  {
+this.listOfImprovements[index].people--
+this.listOfImprovements[index].grain--
+this.listOfImprovements[index].sheep--
+this.listOfImprovements[index].lumber--
+this.listOfImprovements[index].water--
+
+  }
 }
 
