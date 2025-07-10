@@ -1,4 +1,33 @@
 
 <section class="map">
-    <p>map works!</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Improvement</th>
+                <th>Resource Produced</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let improvement of listOfImprovements">
+         <td>{{improvement.improvementLabel}}</td>
+                <td>
+                    <ul>
+                        <li>{{improvement.lumber}} Lumber</li>
+                        <li>{{improvement.grain}} Grain</li>
+                        <li>{{improvement.water}} Water</li>
+                        <li>{{improvement.sheep}} Sheep</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>{{improvement.lumber}} Lumber</li>
+                        <li>{{improvement.grain}} Grain</li>
+                        <li>{{improvement.water}} Water</li>
+                        <li>{{improvement.sheep}} Sheep</li>
+                    </ul>
+                </td>                
+            </tr>
+        </tbody>
+    </table>
 </section>
