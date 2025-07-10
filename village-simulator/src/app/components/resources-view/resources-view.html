@@ -1,7 +1,19 @@
 <section class="resourcesView">
-    <div class="resource-grid">
-        <div>
-            <img class="images" src="../../../assets/house.png"/>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Resources</th>
+                <th>Available</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let total of newTotals">
+                <td>{{total.label}}</td>
+                <td>
+                 {{total.total}}
+                </td>                
+            </tr>
+        </tbody>
+    </table>
 </section>
