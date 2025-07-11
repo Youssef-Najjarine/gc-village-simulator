@@ -1,19 +1,149 @@
 <section class="resourcesView">
-    <table>
-        <thead>
-            <tr>
-                <th>Resources</th>
-                <th>Available</th>
+    <div class="part1">
+        <div>
+            <h2>Click a cell to add an improvement...</h2>
+            <div class="grid">
+                <div class="cell" (click)="addImprovementModal()"></div>
+                <div class="cell" (click)="addImprovementModal()"></div>
+                <div class="cell" (click)="addImprovementModal()"></div>
+                <div class="cell" (click)="addImprovementModal()"></div>
+                <div class="cell" (click)="addImprovementModal()"></div>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let total of newTotals">
-                <td>{{total.label}}</td>
-                <td>
-                 {{total.total}}
-                </td>                
-            </tr>
-        </tbody>
-    </table>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell">TREE</div>
+                <div class="cell">HOUSE</div>
+                <div class="cell">HOUSE</div>
+
+                <div class="cell"></div>
+                <div class="cell">SHEEP</div>
+                <div class="cell">WELL</div>
+                <div class="cell"></div>
+                <div class="cell"></div> 
+                
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div> 
+                <div class="cell">GRAIN</div>
+                <div class="cell">GRAIN</div>    
+                
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>            
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Resources</th>
+                    <th>Available</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let total of newTotals">
+                    <td>{{total.label}}</td>
+                    <td>
+                    {{total.total}}
+                    </td>                
+                </tr>
+            </tbody>
+        </table>
+        <div class="dialogs">
+            <div class="dialog1">
+                <h4>Add Improvement Dialog</h4>
+                <div class="dialog">
+                    <div class="dialog-select">
+                        <label>Type</label>
+                        <select>
+                            <option>People</option>
+                            <option>Grain</option>
+                            <option>Sheep</option>
+                            <option>Lumber</option>
+                            <option>Water</option>
+                        </select>
+                    </div>
+                    <div class="benefits">
+                        <label>
+                            Benefit
+                        </label>
+                        <div>
+                            5 People
+                        </div>
+                    </div>
+                    <div class="costs">
+                        <label>Cost</label>
+                        <ul>
+                            <li>5 Lumber</li>
+                            <li>5 Water</li>
+                            <li>5 Grain</li>
+                            <li>1 Sheep</li>
+                        </ul>
+                    </div>
+                    <div class="button-row">
+                        <div>
+                            <button>Cancel</button>
+                        </div>
+                        <div>
+                            <button (click)="addImprovement()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog2">
+                <h4>Edit Improvement Dialog</h4>
+                <div>
+                    <div class="benefits">
+                        <label>
+                            Type
+                        </label>
+                        <div>
+                            House
+                        </div>
+                    </div>
+                    <div class="benefits">
+                        <label>
+                            Level
+                        </label>
+                        <div>
+                            1
+                        </div>
+                    </div>
+                    <div class="benefits">
+                        <label>
+                            Benefit
+                        </label>
+                        <div>
+                            5 People
+                        </div>
+                    </div>            
+                    <div class="costs">
+                        <label>Cost</label>
+                        <ul>
+                            <li>5 Lumber</li>
+                            <li>5 Water</li>
+                            <li>5 Grain</li>
+                            <li>1 Sheep</li>
+                        </ul>
+                    </div>
+                    <div class="button-row">
+                        <div>
+                            <button>Close</button>
+                        </div>
+                        <div>
+                            <button>Upgrade</button>
+                        </div>                
+                        <div>
+                            <button>Downgrade</button>
+                        </div>
+                        <div>
+                            <button>Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

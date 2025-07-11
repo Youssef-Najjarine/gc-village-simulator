@@ -1,0 +1,66 @@
+.dialog1,
+.dialog2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 21, 34, 0.15);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background: #FFF;
+  padding: 12.889px;
+  width: 500px;
+  border-radius: 20px;
+  z-index: 10000;
+}
+
+.dialog-select {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.dialog-select select {
+  font-size: 20px;
+  width: 200px;
+}
+
+.benefits {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.costs {
+  display: flex;
+  gap: 10px;
+}
+
+.costs ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-size: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 100px;
+  cursor: pointer;
+}
+
+.button-row {
+  margin: 20px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
