@@ -2,16 +2,20 @@ import { Component } from '@angular/core';
 import { Village } from '../../services/village';
 import { Improvement } from '../../interfaces/improvement';
 import { CommonModule }   from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-resources-view',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './resources-view.html',
   styleUrl: './resources-view.css'
 })
 export class ResourcesView {
    newVillage : Village = new Village();
     listOfImprovements : any[] = this.newVillage.listOfImprovements
+    public improvement: any = {label: "People"} 
+    improvements: any[] = []
     newTotals : any[] = [
       {
         label: "People",
@@ -38,6 +42,9 @@ export class ResourcesView {
       this.Settotals()
       console.log(this.newTotals)
     }
+
+
+
     Settotals(): void  {
       for (let i = 0; i < this.newTotals.length; i++){
         for (let j = 0; j < this.listOfImprovements.length; j++){
@@ -67,8 +74,9 @@ export class ResourcesView {
       console.log("OPEN NOWWW")
     }
 
-    addImprovement() {
-        console.log("STUFF ADDEDD")
+    addImprovement(i: any) {
+        this.improvements.push(JSON.parse(JSON.stringify(i)))
+        console.log(this.improvements)
     }
   }
 

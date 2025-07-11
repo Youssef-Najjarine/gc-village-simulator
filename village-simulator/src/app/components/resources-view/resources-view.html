@@ -3,6 +3,7 @@
         <div>
             <h2>Click a cell to add an improvement...</h2>
             <div class="grid">
+                <div class="cell" *ngFor="let improvement of improvements">{{improvement.label}}</div>
                 <div class="cell" (click)="addImprovementModal()"></div>
                 <div class="cell" (click)="addImprovementModal()"></div>
                 <div class="cell" (click)="addImprovementModal()"></div>
@@ -54,15 +55,20 @@
         <div class="dialogs">
             <div class="dialog1">
                 <h4>Add Improvement Dialog</h4>
+                <form
+                (ngSubmit)="addImprovement(improvement)"
+                >
                 <div class="dialog">
                     <div class="dialog-select">
                         <label>Type</label>
-                        <select>
-                            <option>People</option>
-                            <option>Grain</option>
-                            <option>Sheep</option>
-                            <option>Lumber</option>
-                            <option>Water</option>
+                        <select 
+                        [(ngModel)] = "improvement.label"
+                        [ngModelOptions]="{standalone: true}" name = "improvementLabel">
+                            <option [ngValue]= "'Grain'">Grain</option>
+                            <option [ngValue]= "'People'">People</option>
+                            <option [ngValue]= "'Sheep'">Sheep</option>
+                            <option [ngValue]= "'Lumber'">Lumber</option>
+                            <option [ngValue]= "'Water'">Water</option>
                         </select>
                     </div>
                     <div class="benefits">
@@ -84,13 +90,14 @@
                     </div>
                     <div class="button-row">
                         <div>
-                            <button>Cancel</button>
+                            <button type = "button">Cancel</button>
                         </div>
                         <div>
-                            <button (click)="addImprovement()">Add</button>
+                            <button type = "submit">Add</button>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
             <div class="dialog2">
                 <h4>Edit Improvement Dialog</h4>
